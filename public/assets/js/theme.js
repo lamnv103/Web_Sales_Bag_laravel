@@ -1332,12 +1332,15 @@ function pureFadeOut(e) {
   });
 
   $('.shopping-cart .btn-checkout').off('click').on('click', function() {
-    window.location.href='./shop_checkout.html';
+    window.location.href='./checkout';
   });
 
-  $('.checkout-form .btn-checkout').off('click').on('click', function() {
-    window.location.href='./shop_order_complete.html';
-  });
+
+    $('.checkout-form .btn-checkout').off('click').on('click', function() {
+        window.location.href = "{{ route('cart.order.confirmation') }}";
+    });
+
+
 
   document.querySelector('.js-show-register').addEventListener('click', function(e) {
     document.querySelector(this.getAttribute("href")).click();

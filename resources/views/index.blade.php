@@ -1,7 +1,90 @@
 @extends('layouts.app')
 @section('content')
-<main>
-  <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
+    {{-- <style>
+        .chatbox-container {
+            position: fixed;
+            transform: scale(1);
+            bottom: 10px;
+            right: 10px;
+            width: 300px;
+            height: 400px;
+            border: dashed 1px gray;
+            background-color: white;
+            z-index: 1000;
+
+            .messages {
+
+                .left {
+                    display: flex !important;
+                    align-content: center;
+                    margin: 10px;
+
+                    img {
+                        height: 30px;
+                        widows: 30px;
+                        border-radius: 50%
+                    }
+
+                    p {
+                        background-color: rgb(70, 70, 70);
+                        color: white;
+                        padding: 3px 10px;
+                        border-radius: 5px;
+                        margin-left: 5px
+                    }
+                }
+
+                .right {
+                    display: flex !important;
+                    align-content: center;
+                    margin: 10px;
+                    float: right;
+
+                    img {
+                        height: 30px;
+                        widows: 30px;
+                        border-radius: 50%
+                    }
+
+                    p {
+                        background-color: rgb(70, 70, 70);
+                        color: white;
+                        padding: 3px 10px;
+                        border-radius: 5px;
+                        margin-right: 5px
+                    }
+                }
+
+            }
+
+            .bottom {
+                display: flex;
+                position: fixed;
+                bottom: 5px;
+                left: 5px;
+                right: 5px;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+
+                form {
+                    width: 100% !important;
+                }
+
+                button {
+                    height: 30px;
+                    margin: 0px;
+                }
+            }
+        }
+    </style> --}}
+
+    {{-- <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> --}}
+
+    <main>
+        <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow"
+            data-settings='{
       "autoplay": {
         "delay": 5000
       },
@@ -9,236 +92,157 @@
       "effect": "fade",
       "loop": true
     }'>
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="overflow-hidden position-relative h-100">
-          <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-            <img loading="lazy" src="{{ asset('assets/images/home/demo3/slideshow.png') }}" width="542" height="733"
-              alt="Woman Fashion 1"
-              class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-            <div class="character_markup type2">
-              <p
-                class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
-                BAGS</p>
-            </div>
-          </div>
-          <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-            <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-              New Arrivals</h6>
-            <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">TOP BOOK</h2>
-            <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">BAGS</h2>
-            <a href="#"
-              class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-              Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div class="overflow-hidden position-relative h-100">
-          <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-            <img loading="lazy" src="{{ asset('assets/images/slideshow1.png') }}" width="400" height="733"
-              alt="Woman Fashion 1"
-              class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-            <div class="character_markup">
-              <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer
-              </p>
-            </div>
-          </div>
-          <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-            <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-              New Arrivals</h6>
-            <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">TOP BOOK</h2>T
-            <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">BAGS</h2>
-            <a href="#"
-              class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-              Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div class="overflow-hidden position-relative h-100">
-          <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-            <img loading="lazy" src="{{ asset('assets/images/slideshow-character2.png') }}" width="400" height="690"
-              alt="Woman Fashion 2"
-              class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
-          </div>
-          <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-            <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-              New Arrivals</h6>
-            <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">TOP BOOK</h2>
-            <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">BAGS</h2>
-            <a href="#"
-              class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-              Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div
-        class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
-      </div>
-    </div>
-  </section>
-  <div class="container mw-1620 bg-white border-radius-10">
-    <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
-    <section class="category-carousel container">
-      <h2 class="section-title text-center mb-3 pb-xl-2 mb-xl-4">You Might Like</h2>
-
-      <div class="position-relative">
-        <div class="swiper-container js-swiper-slider" data-settings='{
-            "autoplay": {
-              "delay": 5000
-            },
-            "slidesPerView": 8,
-            "slidesPerGroup": 1,
-            "effect": "none",
-            "loop": true,
-            "navigation": {
-              "nextEl": ".products-carousel__next-1",
-              "prevEl": ".products-carousel__prev-1"
-            },
-            "breakpoints": {
-              "320": {
-                "slidesPerView": 2,
-                "slidesPerGroup": 2,
-                "spaceBetween": 15
-              },
-              "768": {
-                "slidesPerView": 4,
-                "slidesPerGroup": 4,
-                "spaceBetween": 30
-              },
-              "992": {
-                "slidesPerView": 6,
-                "slidesPerGroup": 1,
-                "spaceBetween": 45,
-                "pagination": false
-              },
-              "1200": {
-                "slidesPerView": 8,
-                "slidesPerGroup": 1,
-                "spaceBetween": 60,
-                "pagination": false
-              }
-            }
-          }'>
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/logo1.png') }}" width="124"
-                height="124" alt="" />
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Women<br />Tops</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/logo2.png') }}" width="124"
-                height="124" alt="" />
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Women<br />Pants</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/logo3.png') }}" width="124"
-                height="124" alt="" />
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Women<br />Clothes</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/logo4.png') }}" width="124"
-                height="124" alt="" />
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Men<br />Jeans</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/logo5.png') }}" width="124"
-                height="124" alt="" />
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Men<br />Shirts</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/logo6.png') }}" width="124"
-                height="124" alt="" />
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Men<br />Shoes</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/logo7.png') }}" width="124"
-                height="124" alt="" />
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Women<br />Dresses</a>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/logo8.png') }}" width="124"
-                height="124" alt="" />
-              <div class="text-center">
-                <a href="#" class="menu-link fw-medium">Kids<br />Tops</a>
-              </div>
-            </div>
-          </div><!-- /.swiper-wrapper -->
-        </div><!-- /.swiper-container js-swiper-slider -->
-
-        <div
-          class="products-carousel__prev products-carousel__prev-1 position-absolute top-50 d-flex align-items-center justify-content-center">
-          <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-            <use href="#icon_prev_md" />
-          </svg>
-        </div><!-- /.products-carousel__prev -->
-        <div
-          class="products-carousel__next products-carousel__next-1 position-absolute top-50 d-flex align-items-center justify-content-center">
-          <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-            <use href="#icon_next_md" />
-          </svg>
-        </div><!-- /.products-carousel__next -->
-      </div><!-- /.position-relative -->
-    </section>
-
-    <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
-
-    <section class="hot-deals container">
-      <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">Hot Deals</h2>
-      <div class="row">
-        <div
-          class="col-md-6 col-lg-4 col-xl-20per d-flex align-items-center flex-column justify-content-center py-4 align-items-md-start">
-          <h2>Summer Sale</h2>
-          <h2 class="fw-bold">Up to 60% Off</h2>
-
-          <div class="position-relative d-flex align-items-center text-center pt-xxl-4 js-countdown mb-3"
-            data-date="18-3-2024" data-time="06:50">
-            <div class="day countdown-unit">
-              <span class="countdown-num d-block"></span>
-              <span class="countdown-word text-uppercase text-secondary">Days</span>
+            <div class="swiper-wrapper">
+                @foreach ($slides as $slide)
+                    <div class="swiper-slide">
+                        <div class="overflow-hidden position-relative h-100">
+                            <div class="slideshow-character position-absolute bottom-0 pos_right-center">
+                                <img loading="lazy" src="{{ asset('uploads/slides') }}/{{ $slide->image }}" width="542"
+                                    height="733" alt="Woman Fashion 1"
+                                    class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
+                                <div class="character_markup type2">
+                                    <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
+                                        {{ $slide->tagline }} </p>
+                                </div>
+                            </div>
+                            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                                <h6
+                                    class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Sắp ra mắt</h6>
+                                <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">
+                                    {{ $slide->title }}</h2>
+                                <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">
+                                    {{ $slide->subtitle }}</h2>
+                                <a href="{{ $slide->link }}"
+                                    class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">MUA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
-            <div class="hour countdown-unit">
-              <span class="countdown-num d-block"></span>
-              <span class="countdown-word text-uppercase text-secondary">Hours</span>
+            <div class="container">
+                <div
+                    class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
+                </div>
             </div>
+        </section>
 
-            <div class="min countdown-unit">
-              <span class="countdown-num d-block"></span>
-              <span class="countdown-word text-uppercase text-secondary">Mins</span>
-            </div>
+        <div class="container mw-1620 bg-white border-radius-10">
+            <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
+            <section class="category-carousel container">
+                <h2 class="section-title text-center mb-3 pb-xl-2 mb-xl-4">BAN CÓ THỂ THÍCH</h2>
 
-            <div class="sec countdown-unit">
-              <span class="countdown-num d-block"></span>
-              <span class="countdown-word text-uppercase text-secondary">Sec</span>
-            </div>
-          </div>
+                <div class="position-relative">
+                    <div class="swiper-container js-swiper-slider"
+                        data-settings='{
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": 8,
+                    "slidesPerGroup": 1,
+                    "effect": "none",
+                    "loop": true,
+                    "navigation": {
+                      "nextEl": ".products-carousel__next-1",
+                      "prevEl": ".products-carousel__prev-1"
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "slidesPerView": 2,
+                        "slidesPerGroup": 2,
+                        "spaceBetween": 15
+                      },
+                      "768": {
+                        "slidesPerView": 4,
+                        "slidesPerGroup": 4,
+                        "spaceBetween": 30
+                      },
+                      "992": {
+                        "slidesPerView": 6,
+                        "slidesPerGroup": 1,
+                        "spaceBetween": 45,
+                        "pagination": false
+                      },
+                      "1200": {
+                        "slidesPerView": 8,
+                        "slidesPerGroup": 1,
+                        "spaceBetween": 60,
+                        "pagination": false
+                      }
+                    }
+                  }'>
+                        <div class="swiper-wrapper">
+                            @foreach ($brands as $brand)
+                                <div class="swiper-slide">
+                                    <img loading="lazy" class="w-100 h-auto mb-3"
+                                        src="{{ asset('uploads/brands') }}/{{ $brand->image }}" width="124"
+                                        height="124" alt="" />
+                                    <div class="text-center">
+                                        <a href="{{ route('shop.index', ['brands' => $brand->id]) }}"
+                                            class="menu-link fw-medium">{{ $brand->name }}</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div><!-- /.swiper-wrapper -->
+                    </div><!-- /.swiper-container js-swiper-slider -->
 
-          <a href="#" class="btn-link default-underline text-uppercase fw-medium mt-3">View All</a>
-        </div>
-        <div class="col-md-6 col-lg-8 col-xl-80per">
-          <div class="position-relative">
-            <div class="swiper-container js-swiper-slider" data-settings='{
+                    <div
+                        class="products-carousel__prev products-carousel__prev-1 position-absolute top-50 d-flex align-items-center justify-content-center">
+                        <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#icon_prev_md" />
+                        </svg>
+                    </div><!-- /.products-carousel__prev -->
+                    <div
+                        class="products-carousel__next products-carousel__next-1 position-absolute top-50 d-flex align-items-center justify-content-center">
+                        <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#icon_next_md" />
+                        </svg>
+                    </div><!-- /.products-carousel__next -->
+                </div><!-- /.position-relative -->
+            </section>
+
+
+
+            <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
+
+            <section class="hot-deals container">
+                <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">KHUYẾN MÃI HẤP DẪN</h2>
+                <div class="row">
+                    <div
+                        class="col-md-6 col-lg-4 col-xl-20per d-flex align-items-center flex-column justify-content-center py-4 align-items-md-start">
+                        <h2>Khuyến mãi mùa xuân 2024</h2>
+                        <h2 class="fw-bold">Giảm giá lên đến 60%</h2>
+
+                        <div class="position-relative d-flex align-items-center text-center pt-xxl-4 js-countdown mb-3"
+                            data-date="18-3-2024" data-time="06:50">
+                            <div class="day countdown-unit">
+                                <span class="countdown-num d-block"></span>
+                                <span class="countdown-word text-uppercase text-secondary">Ngày</span>
+                            </div>
+
+                            <div class="hour countdown-unit">
+                                <span class="countdown-num d-block"></span>
+                                <span class="countdown-word text-uppercase text-secondary">Giờ</span>
+                            </div>
+
+                            <div class="min countdown-unit">
+                                <span class="countdown-num d-block"></span>
+                                <span class="countdown-word text-uppercase text-secondary">Phút</span>
+                            </div>
+
+                            <div class="sec countdown-unit">
+                                <span class="countdown-num d-block"></span>
+                                <span class="countdown-word text-uppercase text-secondary">Giây</span>
+                            </div>
+                        </div>
+
+                        <a href="{{ route('shop.index') }}"
+                            class="btn-link default-underline text-uppercase fw-medium mt-3">XEM NGAY</a>
+                    </div>
+                    <div class="col-md-6 col-lg-8 col-xl-80per">
+                        <div class="position-relative">
+                            <div class="swiper-container js-swiper-slider"
+                                data-settings='{
                 "autoplay": {
                   "delay": 5000
                 },
@@ -271,652 +275,167 @@
                   }
                 }
               }'>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide product-card product-card_style3">
-                  <div class="pc__img-wrapper">
-                    <a href="details.html">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_0.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_1.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                    </a>
-                  </div>
+                                <div class="swiper-wrapper">
+                                    @foreach ($sproducts as $sproduct)
+                                        <div class="swiper-slide product-card product-card_style3">
+                                            <div class="pc__img-wrapper">
+                                                <a
+                                                    href="{{ route('shop.product.details', ['product_slug' => $sproduct->slug]) }}">
+                                                    <img loading="lazy"
+                                                        src="{{ asset('uploads/products') }}/{{ $sproduct->image }}"
+                                                        width="258" height="313" alt="{{ $sproduct->name }}"
+                                                        class="pc__img">
+                                                </a>
+                                            </div>
 
-                  <div class="pc__info position-relative">
-                    <h6 class="pc__title"><a href="details.html">Raleigh Top Handle Bag - Ivory</a></h6>
-                    <div class="product-card__price d-flex">
-                      <span class="money price text-secondary">$89</span>
+                                            <div class="pc__info position-relative">
+                                                <h6 class="pc__title"><a
+                                                        href="{{ route('shop.product.details', ['product_slug' => $sproduct->slug]) }}">{{ $sproduct->name }}</a>
+                                                </h6>
+                                                <div class="product-card__price d-flex">
+                                                    <span class="money price text-secondary">
+                                                        @if ($sproduct->sale_price)
+                                                            <s>${{ $sproduct->regular_price }}</s>
+                                                            ${{ $sproduct->sale_price }}
+                                                        @else
+                                                            ${{ $sproduct->regular_price }}
+                                                        @endif
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div><!-- /.swiper-wrapper -->
+                            </div><!-- /.swiper-container js-swiper-slider -->
+                        </div><!-- /.position-relative -->
                     </div>
-
-                    <div
-                      class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                        data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                        <span class="d-none d-xxl-block">Quick View</span>
-                        <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_view" />
-                          </svg></span>
-                      </button>
-                      <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="#icon_heart" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
                 </div>
-                <div class="swiper-slide product-card product-card_style3">
-                  <div class="pc__img-wrapper">
-                    <a href="details.html">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_2.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_3.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                    </a>
-                  </div>
+            </section>
 
-                  <div class="pc__info position-relative">
-                    <h6 class="pc__title"><a href="details.html">Classic Push Lock Rectangular Women's Handbag - Powder</a></h6>
-                    <div class="product-card__price d-flex">
-                      <span class="money price text-secondary">$91</span>
-                    </div>
+            <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
 
-                    <div
-                      class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                        data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                        <span class="d-none d-xxl-block">Quick View</span>
-                        <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_view" />
-                          </svg></span>
-                      </button>
-                      <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="#icon_heart" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
+            <section class="category-banner container">
+                <div class="row">
+                    @foreach ($sproducts->whereNotNull('sale_price')->take(2) as $sproduct)
+                        <div class="col-md-6">
+                            <div class="category-banner__item border-radius-10 mb-5">
+                                <img loading="lazy" class="h-auto"
+                                    src="{{ asset('uploads/products') }}/{{ $sproduct->image }}" width="690"
+                                    height="665" alt="{{ $sproduct->name }}" />
+                                <div class="category-banner__item-mark">
+                                    Bắt đầu từ ${{ $sproduct->sale_price }}
+                                </div>
+                                <div class="category-banner__item-content">
+                                    <h3 class="mb-0">{{ $sproduct->name }}</h3>
+                                    <a href="{{ route('shop.product.details', ['product_slug' => $sproduct->slug]) }}"
+                                        class="btn-link default-underline text-uppercase fw-medium">Mua ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-                <div class="swiper-slide product-card product-card_style3">
-                  <div class="pc__img-wrapper">
-                    <a href="details.html">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_4.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_5.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                    </a>
-                  </div>
+            </section>
 
-                  <div class="pc__info position-relative">
-                    <h6 class="pc__title"><a href="details.html">Hertha Trapeze Slouchy Hobo Bag - Grey</a></h6>
-                    <div class="product-card__price d-flex">
-                      <span class="money price text-secondary">$109</span>
-                    </div>
+            <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
 
-                    <div
-                      class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                        data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                        <span class="d-none d-xxl-block">Quick View</span>
-                        <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_view" />
-                          </svg></span>
-                      </button>
-                      <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="#icon_heart" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
+            <section class="products-grid container">
+                <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">SẢN PHẨM NỔI BẬT</h2>
+
+                <div class="row">
+                    @foreach ($fproducts as $fproduct)
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
+                                <div class="pc__img-wrapper">
+                                    <a href="{{ route('shop.product.details', ['product_slug' => $fproduct->slug]) }}">
+                                        <img loading="lazy" src="{{ asset('uploads/products') }}/{{ $fproduct->image }}"
+                                            width="330" height="400" alt="{{ $fproduct->name }}" class="pc__img">
+                                    </a>
+                                </div>
+
+                                <div class="pc__info position-relative">
+                                    <h6 class="pc__title"><a
+                                            href="{{ route('shop.product.details', ['product_slug' => $fproduct->slug]) }}">{{ $fproduct->name }}</a>
+                                    </h6>
+                                    <div class="product-card__price d-flex align-items-center">
+                                        <span class="money price text-secondary">
+                                            @if ($fproduct->sale_price)
+                                                <s>${{ $fproduct->regular_price }}</s> ${{ $fproduct->sale_price }}
+                                            @else
+                                                ${{ $fproduct->regular_price }}
+                                            @endif
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div><!-- /.row -->
+
+                <div class="text-center mt-2">
+                    <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="#">Tải Thêm</a>
                 </div>
-                <div class="swiper-slide product-card product-card_style3">
-                  <div class="pc__img-wrapper">
-                    <a href="details.html">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_6.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_7.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                    </a>
-                  </div>
-
-                  <div class="pc__info position-relative">
-                    <h6 class="pc__title"><a href="details.html">Charlot Elongated Top Handle Bag - Oat</a></h6>
-                    <div class="product-card__price d-flex align-items-center">
-                      <span class="money price-old">$129</span>
-                      <span class="money price text-secondary">$99</span>
-                    </div>
-
-
-                    <div
-                      class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                        data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                        <span class="d-none d-xxl-block">Quick View</span>
-                        <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_view" />
-                          </svg></span>
-                      </button>
-                      <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="#icon_heart" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide product-card product-card_style3">
-                  <div class="pc__img-wrapper">
-                    <a href="details.html">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_8.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_9.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                    </a>
-                  </div>
-
-                  <div class="pc__info position-relative">
-                    <h6 class="pc__title"><a href="details.html">Adelie Envelope Crossbody Bag - Oat</a></h6>
-                    <div class="product-card__price d-flex">
-                      <span class="money price text-secondary">$79</span>
-                    </div>
-
-                    <div
-                      class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                        data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                        <span class="d-none d-xxl-block">Quick View</span>
-                        <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_view" />
-                          </svg></span>
-                      </button>
-                      <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="#icon_heart" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide product-card product-card_style3">
-                  <div class="pc__img-wrapper">
-                    <a href="details.html">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_2.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_3.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                    </a>
-                  </div>
-
-                  <div class="pc__info position-relative">
-                    <h6 class="pc__title"><a href="details.html">Classic Push Lock Rectangular Women's Handbag - Powder</a></h6>
-                    <div class="product-card__price d-flex">
-                      <span class="money price text-secondary">$91</span>
-                    </div>
-
-                    <div
-                      class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                        data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                        <span class="d-none d-xxl-block">Quick View</span>
-                        <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_view" />
-                          </svg></span>
-                      </button>
-                      <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="#icon_heart" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide product-card product-card_style3">
-                  <div class="pc__img-wrapper">
-                    <a href="details.html">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_4.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_5.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                    </a>
-                  </div>
-
-                  <div class="pc__info position-relative">
-                    <h6 class="pc__title"><a href="details.html">Hertha Trapeze Slouchy Hobo Bag - Grey</a></h6>
-                    <div class="product-card__price d-flex">
-                      <span class="money price text-secondary">$109</span>
-                    </div>
-
-                    <div
-                      class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                        data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                        <span class="d-none d-xxl-block">Quick View</span>
-                        <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_view" />
-                          </svg></span>
-                      </button>
-                      <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="#icon_heart" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide product-card product-card_style3">
-                  <div class="pc__img-wrapper">
-                    <a href="details.html">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_6.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img">
-                      <img loading="lazy" src="{{ asset('assets/images/home/demo3/sample_7.jpg') }}" width="258" height="313"
-                        alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                    </a>
-                  </div>
-
-                  <div class="pc__info position-relative">
-                    <h6 class="pc__title"><a href="details.html">Charlot Elongated Top Handle Bag - Oat</a></h6>
-                    <div class="product-card__price d-flex align-items-center">
-                      <span class="money price-old">$129</span>
-                      <span class="money price text-secondary">$99</span>
-                    </div>
-
-                    <div
-                      class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                      <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                        data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                        <span class="d-none d-xxl-block">Quick View</span>
-                        <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <use href="#icon_view" />
-                          </svg></span>
-                      </button>
-                      <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="#icon_heart" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- /.swiper-wrapper -->
-            </div><!-- /.swiper-container js-swiper-slider -->
-          </div><!-- /.position-relative -->
+            </section>
         </div>
-      </div>
-    </section>
 
-    <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
+        <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
 
-    <section class="category-banner container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="category-banner__item border-radius-10 mb-5">
-            <img loading="lazy" class="h-auto" src="{{ asset('assets/images/home/demo3/Dior.jpg') }}" width="690" height="665"
-              alt="" />
-            <div class="category-banner__item-mark">
-              Starting at $2700
-            </div>
-            <div class="category-banner__item-content">
-              <h3 class="mb-0">Dior Women's Medium Book Tote 'Black Multicolor'</h3>
-              <a href="#" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="category-banner__item border-radius-10 mb-5">
-            <img loading="lazy" class="h-auto" src="{{ asset('assets/images/home/demo3/Dior_1.jpg') }}" width="690" height="665"
-              alt="" />
-            <div class="category-banner__item-mark">
-              Starting at $3000
-            </div>
-            <div class="category-banner__item-content">
-              <h3 class="mb-0">Men's Dior Safari Messenger Bag 'Beige Black Dior Oblique Jacquard'</h3>
-              <a href="#" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
-
-    <section class="products-grid container">
-      <h2 class="section-title text-center mb-3 pb-xl-3 mb-xl-4">Featured Products</h2>
-
-      <div class="row">
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
-            <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ asset('assets/images/home/demo3/product_4.jpg') }}" width="330" height="400"
-                  alt="Cropped Faux leather Jacket" class="pc__img">
-              </a>
+        {{-- <div class="chatbox-container
+        ">
+            <div class="messages">
+                @include('chat-receive', ['message' => 'Hi'])
             </div>
 
-            <div class="pc__info position-relative">
-              <h6 class="pc__title"><a href="details.html">Boxy Front Flap Shoulder Bag - Jet Black</a></h6>
-              <div class="product-card__price d-flex align-items-center">
-                <span class="money price text-secondary">$129</span>
-              </div>
-
-              <div
-                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                  data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                  data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                  <span class="d-none d-xxl-block">Quick View</span>
-                  <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="#icon_view" />
-                    </svg></span>
-                </button>
-                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#icon_heart" />
-                  </svg>
-                </button>
-              </div>
+            <div class="bottom">
+                <form id="chat-form" action="{{ url('broadcast') }}" method="POST">
+                    @csrf
+                    <input type="text" id="message" name="message" placeholder="Enter message..."
+                        autocomplete="off">
+                    <button type="submit"></button>
+                </form>
             </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
-            <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ asset('assets/images/home/demo3/product_5.jpg') }}" width="330" height="400"
-                  alt="Cropped Faux leather Jacket" class="pc__img">
-              </a>
-            </div>
+        </div> --}}
+    </main>
+    {{-- 
+    <script>
+        const pusher = new Pusher('{{ config('broadcasting.connections.pusher.key') }}', {
+            cluster: 'ap1'      
+        });
+        const channel = pusher.subscribe('public');
+        console.log("Messsage: ", pusher.connection.state);
 
-            <div class="pc__info position-relative">
-              <h6 class="pc__title"><a href="details.html">Sloane Long Wallet - Noir</a></h6>
-              <div class="product-card__price d-flex align-items-center">
-                <span class="money price text-secondary">$119</span>
-              </div>
+        //Receive messages
+        channel.bind('chat', function(data) {
+            $.post("/receive", {
+                    _token: '{{ csrf_token() }}',
+                    message: data.message,
+                })
+                .done(function(res) {
+                    $(".messages > .message").last().after(res);
+                    $(document).scrollTop($(document).height());
+                });
+        }); --}}
 
-              <div
-                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                  data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                  data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                  <span class="d-none d-xxl-block">Quick View</span>
-                  <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="#icon_view" />
-                    </svg></span>
-                </button>
-                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#icon_heart" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
-            <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ asset('assets/images/home/demo3/product_6.jpg') }}" width="330" height="400"
-                  alt="Cropped Faux leather Jacket" class="pc__img">
-              </a>
-              <div class="product-label text-uppercase bg-white top-0 left-0 mt-2 mx-2">New</div>
-            </div>
-
-            <div class="pc__info position-relative">
-              <h6 class="pc__title"><a href="details.html">Sloane Chain-Handle Wallet - Noir</a></h6>
-              <div class="product-card__price d-flex align-items-center">
-                <span class="money price text-secondary">$117</span>
-              </div>
-
-              <div
-                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                  data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                  data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                  <span class="d-none d-xxl-block">Quick View</span>
-                  <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="#icon_view" />
-                    </svg></span>
-                </button>
-                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#icon_heart" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
-            <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ asset('assets/images/home/demo3/product_7.jpg') }}" width="330" height="400"
-                  alt="Cropped Faux leather Jacket" class="pc__img">
-              </a>
-              <div class="product-label bg-red text-white right-0 top-0 left-auto mt-2 mx-2">-67%</div>
-            </div>
-
-            <div class="pc__info position-relative">
-              <h6 class="pc__title">Adelie Envelope Card Holder - Noir</h6>
-              <div class="product-card__price d-flex align-items-center">
-                <span class="money price-old">$129</span>
-                <span class="money price text-secondary">$99</span>
-              </div>
-
-              <div
-                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                  data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                  data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                  <span class="d-none d-xxl-block">Quick View</span>
-                  <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="#icon_view" />
-                    </svg></span>
-                </button>
-                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#icon_heart" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
-            <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ asset('assets/images/home/demo3/product_8.jpg') }}" width="330" height="400"
-                  alt="Cropped Faux leather Jacket" class="pc__img">
-              </a>
-            </div>
-
-            <div class="pc__info position-relative">
-              <h6 class="pc__title"><a href="details.html">Dior Men's Bag A5 Pouch Leather 'Beige Black Oblique Jacquard'</a></h6>
-              <div class="product-card__price d-flex align-items-center">
-                <span class="money price text-secondary">$119</span>
-              </div>
-
-              <div
-                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                  data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                  data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                  <span class="d-none d-xxl-block">Quick View</span>
-                  <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="#icon_view" />
-                    </svg></span>
-                </button>
-                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#icon_heart" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
-            <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ asset('assets/images/home/demo3/product_9.jpg') }}" width="330" height="400"
-                  alt="Cropped Faux leather Jacket" class="pc__img">
-              </a>
-            </div>
-
-            <div class="pc__info position-relative">
-              <h6 class="pc__title"><a href="details.html">Dior Men's Hit The Road Mini Bag 'Black'</a></h6>
-              <div class="product-card__price d-flex align-items-center">
-                <span class="money price text-secondary">$1629</span>
-              </div>
-
-              <div
-                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                  data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                  data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                  <span class="d-none d-xxl-block">Quick View</span>
-                  <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="#icon_view" />
-                    </svg></span>
-                </button>
-                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#icon_heart" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
-            <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ asset('assets/images/home/demo3/product_10.jpg') }}" width="330" height="400"
-                  alt="Cropped Faux leather Jacket" class="pc__img">
-              </a>
-            </div>
-
-            <div class="pc__info position-relative">
-              <h6 class="pc__title"><a href="details.html">Dior A5 Pouch Leather Men's Bag 'Black Oblique Galaxy'</a></h6>
-              <div class="product-card__price d-flex align-items-center">
-                <span class="money price text-secondary">$1700</span>
-              </div>
-
-              <div
-                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                  data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                  data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                  <span class="d-none d-xxl-block">Quick View</span>
-                  <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="#icon_view" />
-                    </svg></span>
-                </button>
-                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#icon_heart" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
-            <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ asset('assets/images/home/demo3/product_11.jpg') }}" width="330" height="400"
-                  alt="Cropped Faux leather Jacket" class="pc__img">
-              </a>
-            </div>
-
-            <div class="pc__info position-relative">
-              <h6 class="pc__title">Dior Lingot Men's Bag 22 Grained Calfskin 'Black'</h6>
-              <div class="product-card__price d-flex align-items-center">
-                <span class="money price-old">$2300</span>
-                <span class="money price text-secondary">$1999</span>
-              </div>
-
-              <div
-                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
-                  data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                  data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                  <span class="d-none d-xxl-block">Quick View</span>
-                  <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="#icon_view" />
-                    </svg></span>
-                </button>
-                <button class="pc__btn-wl bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#icon_heart" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- /.row -->
-
-      <div class="text-center mt-2">
-        <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="#">Load More</a>
-      </div>
-    </section>
-  </div>
-
-  <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
-</main>
+    {{-- //Broadcast messages
+        // $("#chat-form").submit(function(event) {
+        //     event.preventDefault();
+            
+        //     console.log($("#chat-form #message").val());
+        //     $.ajax({
+        //         url: "/broadcast",
+        //         method: 'POST',
+        //         headers: {
+        //             'X-Socket-Id': pusher.connection.socket_id
+        //         },
+        //         data: {
+        //             _token: '{{ csrf_token() }}',
+        //             message: $("#chat-form #message").val(),
+        //         }
+        //     }).done(function(res) {
+        //         console.log('$("#chat-form #message").val()');
+        //         $(".messages > .message").last().after(res);
+        //         $("#chat-form #message").val();
+        //         $('.chatbox-container').scrollTop($('.chatbox-container').height());
+        //     });
+        // });
+    </script> --}}
 @endsection

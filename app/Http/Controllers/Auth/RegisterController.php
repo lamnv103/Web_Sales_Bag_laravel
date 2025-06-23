@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'mobile' => ['required', 'digits:10', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
     }
 
@@ -64,11 +65,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Khởi tạo biến $imagePath là null nếu không có ảnh
+        $imagePath = null;
+    
+        // Kiểm tra nếu có ảnh tải lên
+        if (isset($data['image'])) {
+            // Lưu ảnh vào thư mục 'public/assets/images/avatar'
+            $imagePath = $data['image']->move(public_path('assets/images/avatar'), $data['image']->getClientOriginalName());
+            $imagePath = 'assets/images/avatar/' . $data['image']->getClientOriginalName(); // Lưu đường dẫn ảnh để lưu vào cơ sở dữ liệu
+        }
+    
+        // Tạo và lưu người dùng vào cơ sở dữ liệu
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'mobile' => $data['mobile'],
             'password' => Hash::make($data['password']),
+            'image' => $imagePath, // Lưu đường dẫn ảnh vào cơ sở dữ liệu
         ]);
     }
+    
+    
 }
