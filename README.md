@@ -67,11 +67,9 @@ php artisan serve
 
 ## ▶️ Video Demo
 
-[![Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/0.jpg)](file:///D:/Year_2/Ki1Nam2/%C4%90ACS2/VIDEO%20DEMO%20WEB.mp4)
+## ▶️ Video Demo
 
-> Thay `YOUR_VIDEO_ID_HERE` bằng ID video trên YouTube của bạn.
-
----
+🎬 [Xem video demo trên Google Drive](https://drive.google.com/file/d/169S9Htoe8FWxxjO7w5LXeKsmDp_K4Tpb/view?usp=sharing)
 
 ## 📁 Một số tính năng
 
