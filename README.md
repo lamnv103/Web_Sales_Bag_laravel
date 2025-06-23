@@ -67,8 +67,6 @@ php artisan serve
 
 ## ▶️ Video Demo
 
-## ▶️ Video Demo
-
 🎬 [Xem video demo trên Google Drive](https://drive.google.com/file/d/169S9Htoe8FWxxjO7w5LXeKsmDp_K4Tpb/view?usp=sharing)
 
 ## 📁 Một số tính năng
